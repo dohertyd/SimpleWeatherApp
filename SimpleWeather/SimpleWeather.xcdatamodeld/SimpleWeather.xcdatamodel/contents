@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="15C50" minimumToolsVersion="Xcode 7.0">
+    <entity name="Condition" representedClassName="Condition" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="humidity" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="locationName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sunrise" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="sunset" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="temperature" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="tempHigh" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="tempLow" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="windBearing" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="windSpeed" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="weathercd" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="WeatherCD" inverseName="weatherCondition" inverseEntity="WeatherCD" syncable="YES"/>
+    </entity>
+    <entity name="DailyForecast" representedClassName="DailyForecast" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="humidity" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="sunrise" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="sunset" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="temperature" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="tempHigh" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="tempLow" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="windBearing" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="windSpeed" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="weathercd" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="WeatherCD" inverseName="dailyForecast" inverseEntity="WeatherCD" syncable="YES"/>
+    </entity>
+    <entity name="WeatherCD" representedClassName="WeatherCD" syncable="YES">
+        <attribute name="condition" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="icon" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="weather_description" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="weather_id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="dailyForecast" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DailyForecast" inverseName="weathercd" inverseEntity="DailyForecast" syncable="YES"/>
+        <relationship name="weatherCondition" maxCount="1" deletionRule="Nullify" destinationEntity="Condition" inverseName="weathercd" inverseEntity="Condition" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Condition" positionX="-6804" positionY="-4306" width="128" height="208"/>
+        <element name="WeatherCD" positionX="-6471" positionY="-4141" width="128" height="133"/>
+        <element name="DailyForecast" positionX="-6804" positionY="-4018" width="128" height="193"/>
+    </elements>
+</model>
