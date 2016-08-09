@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "WXController.h"
-#import <TSMessage.h>
+//#import <TSMessage.h>
 #import "CoreDataStack.h"
 #import "Globals.h"
 
@@ -30,7 +30,7 @@
     
     [self.window makeKeyAndVisible];
     
-    [TSMessage setDefaultViewController:self.window.rootViewController];
+    //[TSMessage setDefaultViewController:self.window.rootViewController];
     
     //
     // Setup and make global the Core Data Stack
@@ -45,18 +45,6 @@
     return YES;
 }
 
-
-
-//- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-//    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-//    // 1
-//    self.window.rootViewController = [[WXController alloc] init];
-//    self.window.backgroundColor = [UIColor whiteColor];
-//    [self.window makeKeyAndVisible];
-//    // 2
-//    [TSMessage setDefaultViewController: self.window.rootViewController];
-//    return YES;
-//}
 
 
 - (void)applicationWillResignActive:(UIApplication *)application {

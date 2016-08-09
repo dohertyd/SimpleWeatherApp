@@ -7,7 +7,6 @@
 //
 
 #import "WXCLient.h"
-#import <TSMessage.h>
 #import "Globals.h"
 #import "Condition.h"
 
@@ -56,7 +55,6 @@ typedef NS_ENUM(NSInteger, NetworkCallType)
     self.currentCondition = [MTLJSONAdapter modelOfClass:[WXCondition class] fromJSONDictionary:self.currentConditionJson error:&error ];
     
     
-    
     if (!error)
     {
          NSLog(@"currentCondition Mantle Object is = >%@<", self.currentCondition);
@@ -73,33 +71,33 @@ typedef NS_ENUM(NSInteger, NetworkCallType)
    // dispatch_async(dispatch_get_main_queue(),
                   //^{
                     // NSError * error;
-    NSManagedObject *managedCurrentCondition = [MTLManagedObjectAdapter managedObjectFromModel:self.currentCondition insertingIntoContext:[Globals getCds].managedObjectContext error:&error];
-    if (!error)
-    {
-        NSLog(@"currentCondition Managed Object is = >%@<", managedCurrentCondition);
-    }
-    else
-    {
-        NSLog(@"Error in Mantle deserialisation is = >%@<", [NSString stringWithFormat:@"%@",[error localizedDescription]]);
-    }
-                       //
-                       // Fetch !!
-                       //
-                       NSEntityDescription * entity = [NSEntityDescription entityForName:@"Condition" inManagedObjectContext:[Globals getCds].managedObjectContext];
-                       
-                       //
-                       // DO A FETCH on Stored Contact Data
-                       //
-                       NSFetchRequest * fetchRequest = [[NSFetchRequest alloc] init];
-                       [fetchRequest setEntity:entity];
-                       
-                       NSArray * fetchedObjects = [[Globals getCds].managedObjectContext executeFetchRequest:fetchRequest error:&error];
-                       
-                       
-                       for (Condition *cc in fetchedObjects)
-                       {
-                           NSLog(@"Condition is = >%@< and weather Array is >%@<" , cc, cc.weathercd);
-                       }
+//    NSManagedObject *managedCurrentCondition = [MTLManagedObjectAdapter managedObjectFromModel:self.currentCondition insertingIntoContext:[Globals getCds].managedObjectContext error:&error];
+//    if (!error)
+//    {
+//        NSLog(@"currentCondition Managed Object is = >%@<", managedCurrentCondition);
+//    }
+//    else
+//    {
+//        NSLog(@"Error in Mantle deserialisation is = >%@<", [NSString stringWithFormat:@"%@",[error localizedDescription]]);
+//    }
+//                       //
+//                       // Fetch !!
+//                       //
+//                       NSEntityDescription * entity = [NSEntityDescription entityForName:@"Condition" inManagedObjectContext:[Globals getCds].managedObjectContext];
+//                       
+//                       //
+//                       // DO A FETCH on Stored Contact Data
+//                       //
+//                       NSFetchRequest * fetchRequest = [[NSFetchRequest alloc] init];
+//                       [fetchRequest setEntity:entity];
+//                       
+//                       NSArray * fetchedObjects = [[Globals getCds].managedObjectContext executeFetchRequest:fetchRequest error:&error];
+//                       
+//                       
+//                       for (Condition *cc in fetchedObjects)
+//                       {
+//                           NSLog(@"Condition is = >%@< and weather Array is >%@<" , cc, cc.weathercd);
+//                       }
                   // });
 }
 
@@ -136,15 +134,15 @@ typedef NS_ENUM(NSInteger, NetworkCallType)
     }
     
     
-    NSManagedObject *managedCurrentCondition = [MTLManagedObjectAdapter managedObjectFromModel:self.currentCondition insertingIntoContext:[Globals getCds].managedObjectContext error:&error];
-    if (!error)
-    {
-        NSLog(@"currentCondition Managed Object is = >%@<", managedCurrentCondition);
-    }
-    else
-    {
-        NSLog(@"Error in Mantle deserialisation is = >%@<", [NSString stringWithFormat:@"%@",[error localizedDescription]]);
-    }
+//    NSManagedObject *managedCurrentCondition = [MTLManagedObjectAdapter managedObjectFromModel:self.currentCondition insertingIntoContext:[Globals getCds].managedObjectContext error:&error];
+//    if (!error)
+//    {
+//        NSLog(@"currentCondition Managed Object is = >%@<", managedCurrentCondition);
+//    }
+//    else
+//    {
+//        NSLog(@"Error in Mantle deserialisation is = >%@<", [NSString stringWithFormat:@"%@",[error localizedDescription]]);
+//    }
 }
 
 -(void)setDailyForecastJson:(NSDictionary *)dailyForecastJson
@@ -167,8 +165,6 @@ typedef NS_ENUM(NSInteger, NetworkCallType)
         NSLog(@"Error in dailyForecast Mantle deserialisation is = >%@<", [NSString stringWithFormat:@"%@",[error localizedDescription]]);
     }
 }
-
-
 
 
 //
@@ -218,10 +214,10 @@ typedef NS_ENUM(NSInteger, NetworkCallType)
         else
         {
             // TODO: Handle error situation
-            NSLog(@"%@",error);
-            [TSMessage showNotificationWithTitle:@"Error"
-                                        subtitle:@"There was a problem fetching the latest weather."
-                                            type:TSMessageNotificationTypeError];
+//            NSLog(@"%@",error);
+//            [TSMessage showNotificationWithTitle:@"Error"
+//                                        subtitle:@"There was a problem fetching the latest weather."
+//                                            type:TSMessageNotificationTypeError];
         }
     }];
     

@@ -140,10 +140,6 @@
     return [NSValueTransformer mtl_JSONArrayTransformerWithModelClass:[Weather class]];
 }
 
-
-
-// This is the transformer from the tutorial
-
 //+(NSValueTransformer *)conditionDescriptionJSONTransformer
 //{
 //    NSValueTransformer * vt = [MTLValueTransformer transformerUsingForwardBlock:^id(NSArray *values, BOOL *success, NSError *__autoreleasing *error)

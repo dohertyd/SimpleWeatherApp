@@ -7,11 +7,10 @@
 //
 
 #import <Mantle/Mantle.h>
-#import <MTLManagedObjectAdapter.h>
 
 @class Weather;
 
-@interface WXCondition : MTLModel <MTLJSONSerializing, MTLManagedObjectSerializing>
+@interface WXCondition : MTLModel <MTLJSONSerializing>
 
 // 2
 @property (nonatomic, strong) NSDate *date;
@@ -36,7 +35,7 @@
 @end
 
 
-@interface Weather : MTLModel<MTLJSONSerializing, MTLManagedObjectSerializing>
+@interface Weather : MTLModel<MTLJSONSerializing>
 
 @property (nonatomic, assign) NSInteger weather_id;
 
